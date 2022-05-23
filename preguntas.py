@@ -109,7 +109,12 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
+    print(tbl0)
+
+    tb10 = tbl0.groupby("_c1")["_c2"].max()
+    print(tb10)
+    return tb10
 
 
 def pregunta_06():
@@ -121,7 +126,16 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    tbl1 = pd.read_csv("tbl1.tsv", sep="\t")
+    print(tbl1)
+
+    tb11= list(tbl1["_c4"].unique())
+    print(tb11)
+    tb11 = np.sort(tb11)
+    print(tb11)
+    tb11 = list(lamba.upper() for lamba in tb11)
+    print(tb11)
+    return tb11
 
 
 def pregunta_07():
