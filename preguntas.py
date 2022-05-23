@@ -7,6 +7,7 @@ Este archivo contiene las preguntas que se van a realizar en el laboratorio.
 Utilice los archivos `tbl0.tsv`, `tbl1.tsv` y `tbl2.tsv`, para resolver las preguntas.
 
 """
+from tkinter.tix import COLUMN
 import pandas as pd
 import numpy as np
 
@@ -46,7 +47,13 @@ def pregunta_02():
     4
 
     """
-    return
+    tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
+
+    rpa = len(list(tbl0.columns))
+    print(rpa)
+
+
+    return rpa
 
 
 def pregunta_03():
