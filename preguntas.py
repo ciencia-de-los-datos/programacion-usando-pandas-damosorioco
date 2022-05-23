@@ -256,7 +256,11 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    tbl1 = tbl1.sort_values("_c4")
+    print(tbl1)
+    tb11 = tbl1.groupby("_c0", as_index=False).agg(",".join)
+    print(tb11)
+    return tb11
 
 
 def pregunta_12():
@@ -274,7 +278,22 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+    tbl2 = pd.read_csv("tbl2.tsv", sep="\t")
+    print(tbl2)
+    tb12 = tbl2.copy()
+    tb12 = tbl2.sort_values("_c5a")
+    tb12['_c5'] = tbl2['_c5a'].map(str)+':'+tb12['_c5b'].map(str)
+
+    tb121 = tb12[['_c0','_c5']].groupby('_c0')
+
+    print(tb12)
+
+    def agregar(x):
+        return ','.join(x)
+    concatenar = tb121.aggregate(agregar)
+    concatenar.reset_index(inplace = True)
+    print(concatenar)
+    return concatenar
 
 
 def pregunta_13():
