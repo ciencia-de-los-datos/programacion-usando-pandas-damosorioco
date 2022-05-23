@@ -256,11 +256,11 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    tbl1 = tbl1.sort_values("_c4")
-    print(tbl1)
+    tbl1 = pd.read_csv("tbl1.tsv", sep="\t")
+    tb111 = tbl1.sort_values("_c4")
+    print(tb111)
     tb111 = tbl1.groupby("_c0", as_index=False).agg(",".join)
     print(tb111)
-    
     return tb111
 
 
