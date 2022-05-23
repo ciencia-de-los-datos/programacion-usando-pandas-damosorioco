@@ -233,9 +233,7 @@ def pregunta_10():
         return':'.join(lista)
     
     ##
-    final = tb10.groupby(['_c1'], as_index=False).apply(cadena)
-    print(final)
-    final.columns=["_c0","_c1"]
+    final = tb10.groupby(['_c1'], as_index=True).apply(cadena)
     print(final)    
     return final
 
@@ -257,9 +255,10 @@ def pregunta_11():
     39   39    a,d,f
     """
     tbl1 = pd.read_csv("tbl1.tsv", sep="\t")
-    tb111 = tbl1.sort_values("_c4")
+    tb111 = tbl1.sort_values("_c4", inplace=True)
     print(tb111)
     tb111 = tbl1.groupby("_c0", as_index=False).agg(",".join)
+    
     print(tb111)
     return tb111
 
