@@ -260,6 +260,7 @@ def pregunta_11():
     print(tbl1)
     tb111 = tbl1.groupby("_c0", as_index=False).agg(",".join)
     print(tb111)
+    
     return tb111
 
 
