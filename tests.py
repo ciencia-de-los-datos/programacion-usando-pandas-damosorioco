@@ -2,11 +2,12 @@
 Calificación del laboratorio
 -----------------------------------------------------------------------------------------
 """
-pip3 install pandas
+
 
 import sys
 
 import pandas as pd
+import numpy as np
 
 import preguntas
 
