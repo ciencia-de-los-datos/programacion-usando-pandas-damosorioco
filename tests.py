@@ -2,6 +2,7 @@
 Calificación del laboratorio
 -----------------------------------------------------------------------------------------
 """
+pip3 install pandas
 
 import sys
 
