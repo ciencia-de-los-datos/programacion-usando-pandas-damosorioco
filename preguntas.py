@@ -151,7 +151,12 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return
+    tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
+    print(tbl0)
+
+    tb10 = tbl0.groupby("_c1")["_c2"].sum()
+    print(tb10)
+    return tb10
 
 
 def pregunta_08():
@@ -169,7 +174,12 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
-    return
+    tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
+    print(tbl0)
+
+    tbl0["suma"]=tbl0["_c0"]+tbl0["_c2"]
+    print(tbl0)
+    return tb10
 
 
 def pregunta_09():
@@ -187,7 +197,12 @@ def pregunta_09():
     39   39   E    5  1998-01-26  1998
 
     """
-    return
+    tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
+    print(tbl0)
+
+    tbl0["Año"] = tbl0["_c3"].map(lambda x: x[0:4])
+    print(tbl0)
+    return tb10
 
 
 def pregunta_10():
@@ -204,7 +219,17 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return
+    tb10 = tbl0.copy()
+    print(tb10)
+    tb10['_c2']=tb10['_c2'].apply(lambda x: str(x))
+
+    def cadena(df):
+        lista = list(df['_c2'])
+        lista.sort()
+        return':'.join(lista)
+    final = tb10.groupby('_c1').apply(cadena)
+    print(final)
+    return final
 
 
 def pregunta_11():
