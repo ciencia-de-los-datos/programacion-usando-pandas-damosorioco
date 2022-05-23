@@ -179,6 +179,7 @@ def pregunta_08():
 
     tbl0["suma"]=tbl0["_c0"]+tbl0["_c2"]
     print(tbl0)
+    
     return tb10
 
 
@@ -200,8 +201,9 @@ def pregunta_09():
     tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
     print(tbl0)
 
-    tbl0["Año"] = tbl0["_c3"].map(lambda x: x[0:4])
+    tbl0["year"] = tbl0["_c3"].map(lambda x: x[0:4])
     print(tbl0)
+    
     return tb10
 
 
