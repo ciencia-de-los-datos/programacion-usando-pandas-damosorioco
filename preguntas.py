@@ -225,12 +225,18 @@ def pregunta_10():
     print(tb10)
     tb10['_c2']=tb10['_c2'].apply(lambda x: str(x))
 
+    
     def cadena(df):
         lista = list(df['_c2'])
         lista.sort()
+
         return':'.join(lista)
-    final = tb10.groupby('_c1').apply(cadena)
+    
+    ##
+    final = tb10.groupby(['_c1'], as_index=False).apply(cadena)
     print(final)
+    final.columns=["_c0","_c1"]
+    print(final)    
     return final
 
 
