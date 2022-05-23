@@ -180,7 +180,7 @@ def pregunta_08():
     tbl0["suma"]=tbl0["_c0"]+tbl0["_c2"]
     print(tbl0)
     
-    return tb10
+    return tbl0
 
 
 def pregunta_09():
@@ -204,7 +204,7 @@ def pregunta_09():
     tbl0["year"] = tbl0["_c3"].map(lambda x: x[0:4])
     print(tbl0)
     
-    return tb10
+    return tbl0
 
 
 def pregunta_10():
