@@ -31,10 +31,10 @@ def pregunta_01():
     """
     tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
 
-    tbl0.count()
+    length= len(tbl0.axes[0])
 
 
-    return tbl0.count()
+    return length
 
 
 def pregunta_02():
