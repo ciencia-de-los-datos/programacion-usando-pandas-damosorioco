@@ -34,8 +34,6 @@ def pregunta_01():
     tbl0.count()
 
 
-
-
     return tbl0.count()
 
 
