@@ -310,4 +310,12 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    tb12 = tbl2[['_c0', '_c5b']].groupby('_c0').sum()
+    print(tb12)
+    tb12.reset_index(inplace=True)
+    print(tb12)
+    tb102 = tbl0[['_c0','_c1']].merge(tb12, on='_c0')[['_c1','_c5b']]
+    print(tb102)
+    tb102 = tb102.groupby('_c1').sum()['_c5b']
+    print(tb102)
+    return tb102
