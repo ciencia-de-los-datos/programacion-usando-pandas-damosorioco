@@ -223,19 +223,11 @@ def pregunta_10():
     """
     tb10 = tbl0.copy()
     print(tb10)
-    tb10['_c2']=tb10['_c2'].apply(lambda x: str(x))
+    final = tb10.groupby(['_c1']).agg({'_c2':lambda x:":".join(map(str,sorted(list(x))))})
+    
 
     
-    def cadena(df):
-        lista = list(df['_c2'])
-        lista.sort()
-
-        return':'.join(lista)
-    
-    ##
-    final = tb10.groupby(['_c1'], as_index=True).apply(cadena)
-    print(final)    
-    return final
+    print(final)
 
 
 def pregunta_11():
